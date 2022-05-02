@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/css/app.css">
+    <title>Registros</title>
+</head>
+<body>
+    
+    <header class="background-dark " >
+        
+        <div class="header container">
+            
+            <div class="header__mobile ">
+                <img src="build/img/barras.svg" id ="burger" alt="Icono menú">
+            </div>
+            
+            <div class="header__index ">
+                <a href="index.html"><span class="header__index--span">Presupuesto personal</span></a>
+            </div>
+            
+            
+            <div class="header__right">
+                <img src="build\img\dark-mode.svg" id="dark-mode" alt="dark mode">
+                
+            </div>
+        </div>
+    </header>
+    
+    <section class="modal-lateral">
+        <button class="button-red btn-cls">X</button>
+        <nav class="modal-lateral__nav">
+            <a href="index.html">Volver a la Página Principal</a>
+        </nav>
+    </section>
+
+    <h2 class="title">Depositar</h2>
+
+    <section class="background-gray container">
+        <form class="formIn container form" id="formIn" method="post">
+            <fieldset class="formIn__fieldset fieldset">
+                <legend>Realizá tu depósito</legend>
+                
+                <div class="fieldset__section">
+                    <label for="conceptIn">Concepto :</label>
+                    <select name="conceptIn" id="conceptIn" required>
+                        <option value="1" selected disabled>--Seleccioná un concepto--</option>
+                        <option value="Ventas">Ventas</option>
+                        <option value="Mesada">Mesada</option>
+                        <option value="Ahorros">Ahorros</option>
+                        <option value="Salario">Salario</option>
+                        <option value="Vueltos">Vueltos</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+    
+                <div class="fieldset__section">
+                    <label for="montoIn">Monto :</label>
+                    <input name ="montoIn" type="number" id="montoIn" placeholder="Ingresá el monto" required>
+                </div>
+                
+                <div class="fieldset__section">
+                    <label for="timeIn">Fecha :</label>
+                    <input type="datetime-local" name="timeIn" id="timeIn" required>
+                </div>
+    
+            </fieldset>
+            <div class="msg-error"></div>
+            <input type="button" value="Enviar" class="button-green" onclick="createRecordIn()">
+        </form>
+
+    </section>
+
+    <h2 class="title">Retirar</h2>
+
+    <section class="background-gray container">
+        <form class="formOut container form" method="post" id="formOut">
+            <fieldset class="formOut__fieldset fieldset">
+                <legend>Realizá tu extracción</legend>
+                
+                <div class="fieldset__section">
+                    <label for="concept">Concepto :</label>
+                    <select name="concept" id="concept" required>
+                        <option value="1" selected disabled>--Seleccioná un concepto--</option>
+                        <option value="Alquiler">Alquiler</option>
+                        <option value="Honorarios">Honorarios</option>
+                        <option value="Expensas">Expensas</option>
+                        <option value="Articulos del hogar">Articulos del hogar</option>
+                        <option value="Comida">Comida</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+                
+                <div class="fieldset__section">
+                    <label for="monto">Monto :</label>
+                    <input type="number" id="monto" name="monto" placeholder="Ingresá el monto" required>                
+                </div>
+
+                <div class="fieldset__section">
+                    <label for="time">Fecha :</label>
+                    <input type="datetime-local" name="time" id="time" required>
+                </div>
+    
+            </fieldset>
+            <div class="msg-error-out msg-error"></div>
+            <input type="button" onclick="createRecordOut()" value="Enviar" id="refresh" class="button-green">
+        </form>
+
+    </section>
+
+    <div class="container">
+        <h3 class="title">Lista de actividades</h3>
+        <p>Seleccioná un registro para modificarlo o eliminarlo</p>
+    </div>
+
+    <div class="alert container">Algo sucedio...</div>
+    <div class="records container">
+        <div class="records__out container">
+            <table class="records__out-table table"></table>
+        </div>
+        <div class="records__in container">
+            <table class="records__in-table table"></table>
+        </div>
+    </div>
+
+    <div class="modalEdit container ">
+        <div class="button right">
+            <div class="button-close">X</div>
+        </div>
+            <form id="formEdit" class="form container" method="post">
+                <fieldset class="fieldset">
+                        <legend>Editá tus registros</legend>
+                        <input type="hidden" id="IdOut">
+                        <div class="fieldset__section">
+                            <label for="conceptEditOut">Concepto: </label>
+                            <select name="conceptEditOut" id="conceptEditOut" required>
+                                <option value="Ventas">Ventas</option>
+                                <option value="Mesada">Mesada</option>
+                                <option value="Ahorros">Ahorros</option>
+                                <option value="Salario">Salario</option>
+                                <option value="Vueltos">Vueltos</option>
+                                <option value="Alquiler">Alquiler</option>
+                                <option value="Honorarios">Honorarios</option>
+                                <option value="Expensas">Expensas</option>
+                                <option value="Articulos del hogar">Articulos del hogar</option>
+                                <option value="Comida">Comida</option>
+                                <option value="Otros">Otros</option>
+                            </select>
+                        </div>
+                
+                        <div class="fieldset__section">
+                            <label for="montoEdit">Monto: </label>
+                            <input type="number" id="montoEdit" name="montoEdit">
+                        </div>
+                        <div class="fieldset__section">
+                            <label for="dateEdit">Fecha: </label>
+                            <input type="datetime-local" id="dateEdit" name="dateEdit">
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="button container">
+                    <button class="button-blue" onclick="updateRecord()">Guardar</button>
+                    <button class="button-red" onclick="confirmDelete()">Borrar registro</button>
+                </div>
+                <div class=" msg-error" id="msg-edit-out"></div>
+
+    </div>
+
+    
+
+    <footer class="footer"></footer>
+
+    <script src="build\js\index.js"></script>
+    <script src="build\js\main.js"></script>
+    <script src="build/js/modal.js"></script>
+
+</body>
+</html>

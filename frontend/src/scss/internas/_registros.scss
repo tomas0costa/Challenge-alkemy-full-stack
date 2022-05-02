@@ -1,0 +1,47 @@
+.form{
+
+    .fieldset {
+
+        border-radius: 5px;
+        @media (min-width:$tablet){
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            
+            gap: 2rem;
+            
+        }
+        .fieldset__section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+        input, select {
+            border: none;
+            border-radius: 3px;
+            padding: 1rem;
+            width: 75%;
+        }
+    }
+}
+
+.alert {
+    display: none;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.alert.error {
+    background: lightness($color: $rojo);
+    border: 1px $rojo solid;
+    color: darken($color: $rojo, $amount: 20);
+    display:inline;
+    transition: all 2s;
+}
+
+.alert.success {
+    background-color: $verde;
+    border: 1px $verde solid;
+    color: darken($color: $verde, $amount: 20);
+    transition: all 7s;
+}
+

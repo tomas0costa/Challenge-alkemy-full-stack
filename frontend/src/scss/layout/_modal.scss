@@ -1,0 +1,58 @@
+.modalEdit {
+    display: none;
+    position: fixed;
+    background-color: lighten($color: $gris, $amount: 40);
+    border-radius: 5px;
+    height: 40%;
+    top: 30%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    @media (min-width: $tablet){
+        height: 29%;
+
+        .button{
+            display:flex;
+            gap: .5rem;
+
+        }
+    }
+}
+
+.button.right {
+    display: flex;
+    justify-content: flex-end
+}
+.button-close{
+    @include button($rojo,block,10%);
+    padding: .5rem 1rem;
+    margin-top: 0;
+    
+}
+
+@media (max-width:$tablet){
+    .modal-lateral{
+        position: absolute;
+        background-color: rgba(6, 15, 3, 0.534);
+        width: 0;
+        height: 100rem;
+        transition: all .5s;
+    }
+    
+    .btn-cls , .modal-lateral__nav {
+        position:relative;
+        right: 100rem;
+    
+        transition: all .5s;
+        a {
+            @include button ($verde,block,100%);
+        }
+    }
+
+}
+@media (min-width: $tablet){
+    .modal-lateral {
+        display: none;
+    }
+}

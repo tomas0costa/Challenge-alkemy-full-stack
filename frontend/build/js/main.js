@@ -1,0 +1,1 @@
+const resultante=document.querySelector(".main__balance--result");let montos=0;function monto(){for(let t=0;t<records.length-1;t++)montos+=records[t].monto;resultante&&(resultante.innerHTML="$"+montos,montos<0?resultante.classList.add("red"):resultante.classList.add("green"))}

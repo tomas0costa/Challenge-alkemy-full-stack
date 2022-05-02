@@ -1,0 +1,52 @@
+@mixin phone {
+    @media (min-width: #{$phone}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin grid($columnas,$espaciado) {
+    display:grid;
+    gap:$espaciado;
+    grid-template-columns: $columnas;
+}
+
+@mixin button($color,$display,$ancho) {
+    background-color: $color;
+    color: $blanco;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align:center;
+    margin-top: calc($separacion / 2);
+    display: $display;
+    border: none;
+    border-radius: 5px;
+    width: $ancho;
+    &:hover {
+        cursor: pointer;
+        background-color: darken($color: $color, $amount: 5);
+    }
+}
+
+@mixin color_table($color) {
+    background-color: lighten($color,20);
+        tr:hover:not(:first-child) {
+            background-color: darken($color, 1);
+            cursor: pointer;
+        }
+        tr:active:not(:first-child){
+            background-color: darken($color, $amount: 10);
+        }
+}

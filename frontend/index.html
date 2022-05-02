@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="build/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body id="body">
+    
+    <header class="background-dark " >
+        
+        <div class="header container">
+            
+            <div class="header__mobile ">
+                <img src="build/img/barras.svg" id ="burger" alt="Icono menú">
+            </div>
+            
+            <div class="header__index ">
+                <a href="index.html"><span class="header__index--span">Presupuesto personal</span></a>
+            </div>
+            
+            
+            <div class="header__right">
+                <img src="build\img\dark-mode.svg" id="dark-mode" alt="dark mode">
+                <nav class="header_right--nav ">
+                    <a href="registros.html">Realizar una operación</a>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+    
+    <section class="modal-lateral">
+        <button class="button-red btn-cls">X</button>
+        <nav class="modal-lateral__nav">
+            <a href="registros.html">Realizar una operación</a>
+        </nav>
+    </section>
+    
+    <main class="main container">
+        <div class="main__balance">
+            <h1 class="title">Balance Global</h1>
+            <p class="text-center">La resultante de los depositos y extracciones</p>
+            <h3 class="main__balance--result">
+            </h3>
+            </div>
+        </div>
+    </main>
+
+
+    <section class="records container">
+        <div class="records__out container">
+            <table class="records__out-table table"></table>
+        </div>
+        <div class="records__in container">
+            <table class="records__in-table table"></table>
+        </div>
+    </section>
+
+
+
+
+
+
+<script src="build/js/index.js"></script>
+<script src="build/js/main.js"></script>
+<script src="build/js/modal.js"></script>
+
+
+</body>
+</html>

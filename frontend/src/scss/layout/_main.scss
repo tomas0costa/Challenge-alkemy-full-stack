@@ -1,0 +1,28 @@
+
+.main {
+    margin-top: 10rem;
+}
+.main__balance {
+    background-color: lighten($color: $gris, $amount: 50);
+    padding-bottom: 1rem;
+}
+
+.main__balance--result {
+    text-align: center;
+    padding:1rem ;
+    font-weight: 700;
+    
+    border-radius: 5px;
+    width: 30%;
+    margin: 0 auto;
+    background-color: $blanco;
+    
+    
+}
+
+.main__balance--result.green{
+    color: $verde;
+}
+.main__balance--result.red{
+    color: $rojo;
+}

@@ -1,0 +1,21 @@
+//fuente
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+$fuente_principal : 'Lato', sans-serif;
+
+//tamaño de los media-queries
+$phone :480px;
+$tablet:768px;
+$desktop: 1024px;
+
+//colores
+
+$blanco:#f8f8f6;
+$negro : #202020;
+$amarillo: rgb(185, 183, 24);
+$verde: rgb(38, 189, 113);
+$gris:#444242;
+$azul : rgb(17, 108, 145); 
+$rojo : #e14747;
+$separacion:5rem;

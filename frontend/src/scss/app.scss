@@ -1,0 +1,15 @@
+@import 'base/normalize';
+@import 'base/mixins';
+@import 'base/variables';
+@import 'base/globales';
+@import 'base/utilidades';
+@import 'base/dark-mode';
+
+
+@import 'internas/registros';
+
+
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/records';
+@import 'layout/modal';

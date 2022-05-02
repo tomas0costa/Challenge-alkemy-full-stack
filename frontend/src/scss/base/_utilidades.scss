@@ -1,0 +1,44 @@
+.background-dark {
+    background-color: $negro;   
+}
+
+.background-gray {
+    background-color: lighten($color: $gris, $amount: 60);
+    
+    border-radius: .5rem;
+    padding: 2rem
+}
+
+.button-green {
+    @include button($verde, block, 100%);
+
+    @media (min-width: $tablet){
+        width: 20rem;
+    }
+    
+}
+.button-red {
+    @include button($rojo, inline, 100%);
+    
+}
+.button-blue {
+    @include button($azul, inline,100%);
+    
+}
+
+.title {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    
+}
+
+.msg-error {
+    color: $rojo;
+    display: block;
+    margin-top: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
